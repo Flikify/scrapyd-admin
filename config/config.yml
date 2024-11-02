@@ -1,0 +1,14 @@
+# 登录账号密码
+USERNAME: admin
+PASSWORD: password
+
+# 【可选】是否开开启前端静态文件预压缩以提升页面加载速度，默认为True
+COMPRESS_STATIC: True
+
+# 以下配置在v3.0不支持
+# scrapyd地址, 结尾不要加斜杆
+# SCRAPYD_SERVER: "http://127.0.0.1:6800"
+
+# 【可选】支持 basic auth @since 2.0.8 
+SCRAPYD_USERNAME: admin
+SCRAPYD_PASSWORD: password
