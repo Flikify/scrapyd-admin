@@ -73,10 +73,10 @@ if [ ! -z "$SCRAPYD_USERNAME" ] && [ ! -z "$SCRAPYD_PASSWORD" ]; then
     sed -i "s/^username =.*/username = $SCRAPYD_USERNAME/" /app/config/scrapyd.conf
     sed -i "s/^password =.*/password = $SCRAPYD_PASSWORD/" /app/config/scrapyd.conf
 
-    sed -i "s/^USERNAME =.*/USERNAME = $SCRAPYD_USERNAME/" /app/config/config.yml
-    sed -i "s/^PASSWORD =.*/PASSWORD = $SCRAPYD_PASSWORD/" /app/config/config.yml
-	sed -i "s/^SCRAPYD_USERNAME =.*/SCRAPYD_USERNAME = $SCRAPYD_USERNAME/" /app/config/config.yml
-    sed -i "s/^SCRAPYD_PASSWORD =.*/SCRAPYD_PASSWORD = $SCRAPYD_PASSWORD/" /app/config/config.yml
+    sed -i "s/^USERNAM: .*/USERNAME: $SCRAPYD_USERNAME/" /app/config/config.yml
+    sed -i "s/^PASSWORD: .*/PASSWORD: $SCRAPYD_PASSWORD/" /app/config/config.yml
+    sed -i "s/^SCRAPYD_USERNAME: .*/SCRAPYD_USERNAME: $SCRAPYD_USERNAME/" /app/config/config.yml
+    sed -i "s/^SCRAPYD_PASSWORD: .*/SCRAPYD_PASSWORD: $SCRAPYD_PASSWORD/" /app/config/config.yml
 fi
 
 echo "启动服务..."
