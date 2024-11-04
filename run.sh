@@ -21,6 +21,21 @@ check_port() {
     fi
 }
 
+# 定义函数 check_and_copy，接受两个参数：检查路径和复制路径
+check_and_copy() {
+    TARGET_FILE="$1"
+    SOURCE_FILE="$2"
+    
+    # 检查目标文件是否存在
+    if [ ! -f "$TARGET_FILE" ]; then
+        echo "$TARGET_FILE 不存在，正在复制..."
+        cp "$SOURCE_FILE" "$TARGET_FILE"
+        echo "文件复制完成。"
+    else
+        echo "$TARGET_FILE 已存在，无需复制。"
+    fi
+}
+
 # 检查服务就绪
 wait_for_service() {
     local host="$1"
@@ -43,7 +58,10 @@ wait_for_service() {
 }
 
 
-mkdir /app/scrapyd/project
+mkdir -p /app/scrapyd/project /app/config
+
+check_and_copy "/app/config/config.yml" "/etc/app/config/config.yml"
+check_and_copy "/app/config/scrapyd.conf" "/etc/app/config/scrapyd.conf"
 
 # 检查并清理端口
 check_port 6800
