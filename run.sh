@@ -57,8 +57,7 @@ wait_for_service() {
     echo "$service 已就绪!"
 }
 
-
-mkdir -p /app/scrapyd/project /app/config
+mkdir -p /app/scrapyd/project /app/config /app/scrapyd/{eggs,items,logs,dbs,project}
 
 check_and_copy "/app/config/config.yml" "/etc/app/config/config.yml"
 check_and_copy "/app/config/scrapyd.conf" "/etc/app/config/scrapyd.conf"
